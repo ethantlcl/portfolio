@@ -32,7 +32,7 @@ export const WORK_TIMELINE: WorkTimelinePoint[] = [
   },
   {
     point: new THREE.Vector3(1, 1, -18),
-    year: new Date().toLocaleDateString('default', { year: 'numeric'}),
+    year: String(new Date().getFullYear() + 1),
     title: `?`,
     subtitle: `???`,
     position: 'right',
