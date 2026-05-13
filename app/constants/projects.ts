@@ -279,37 +279,6 @@ const photographyPreviewGallery = photographyGalleryFiles.map((image, index) => 
   height: image.height,
 }));
 
-const photographyFeaturedGallery = [
-  {
-    src: '/portfolio-photos/20251224_143100.jpeg',
-    alt: 'Snowy ridge walk',
-    orientation: 'landscape' as const,
-    width: 4000,
-    height: 2252,
-  },
-  {
-    src: '/portfolio-photos/83AFA50D-45F1-428C-81AD-B3309916356A.jpeg',
-    alt: 'City street perspective',
-    orientation: 'landscape' as const,
-    width: 6000,
-    height: 4000,
-  },
-  {
-    src: '/portfolio-photos/DSC03358.JPG',
-    alt: 'Temple courtyard with blue car',
-    orientation: 'portrait' as const,
-    width: 4000,
-    height: 6000,
-  },
-  {
-    src: '/portfolio-photos/EBED2339-AFEB-40CE-9BB2-CB66E6E4E136.jpeg',
-    alt: 'Reflective light installation',
-    orientation: 'landscape' as const,
-    width: 6000,
-    height: 4000,
-  },
-];
-
 const workExperienceGallery = [
   {
     src: '/portfolio-work-experience/IMG_3301.jpg',
@@ -420,18 +389,6 @@ const horizonsGallery = [
     height: 4128,
   },
 ];
-
-const BLOG_PLACEHOLDER_DETAILS = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat, justo sit amet gravida consequat, turpis lorem luctus mauris, vitae interdum neque neque nec velit. Curabitur eget nisl vitae risus bibendum dapibus.
-
-## Process Notes
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit, arcu vel feugiat eleifend, velit sem sodales purus, et posuere nibh lectus eu erat. Duis quis justo sed neque egestas faucibus.
-
-- Collected references and shaped the visual direction.
-- Wrote down structure, pacing, and interaction notes.
-- Refined the page until the layout felt clear and intentional.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae turpis sed lorem tempor sodales. Nam faucibus leo ut lectus fermentum, sed feugiat lorem consectetur.`;
 
 export const PROJECTS: Project[] = [
   {

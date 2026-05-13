@@ -50,16 +50,16 @@ const DeviceGate = ({ children }: { children: React.ReactNode }) => {
         <p className="device-gate-eyebrow"> </p>
         <h1 className="device-gate-title">This portfolio was optimised for laptop and desktop browsers.</h1>
         <p className="device-gate-copy">
-           Yoohoo, thanks for visiting! I can see you&apos;re visiting on a mobile device or Samsung Smart Fridge,
+          Yoohoo, thanks for visiting! I can see you&apos;re visiting on a mobile device or Samsung Smart Fridge,
           so parts of the website will feel cramped😞...Please view on browser for the best experience, but if you&apos;d still like
-          to look around, I'll let you pass
+          to look around, I&apos;ll let you pass
         </p>
         <div className="device-gate-actions">
           <button className="device-gate-button device-gate-button-primary" onClick={handleProceed}>
             Let me in!!!
           </button>
           <button className="device-gate-button device-gate-button-secondary" onClick={handleLeave}>
-            I'll come back later
+            I&apos;ll come back later
           </button>
         </div>
       </div>

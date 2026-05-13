@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "prepare": "husky",
-    "lint": "next lint"
+    "lint": "eslint app --ext .ts,.tsx"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
