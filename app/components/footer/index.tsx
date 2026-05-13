@@ -7,12 +7,51 @@ import * as THREE from "three";
 import { FOOTER_LINKS } from "../../constants";
 import { FooterLink } from "../../types";
 
+const showFooterToast = (message: string) => {
+  const existingToast = document.getElementById("footer-toast");
+  const toast = existingToast ?? document.createElement("div");
+
+  toast.id = "footer-toast";
+  toast.textContent = message;
+  toast.style.position = "fixed";
+  toast.style.left = "50%";
+  toast.style.bottom = "2rem";
+  toast.style.transform = "translateX(-50%)";
+  toast.style.padding = "0.85rem 1.2rem";
+  toast.style.border = "1px solid rgba(255, 255, 255, 0.24)";
+  toast.style.background = "rgba(24, 24, 24, 0.9)";
+  toast.style.color = "#fff";
+  toast.style.fontSize = "0.85rem";
+  toast.style.letterSpacing = "0.08em";
+  toast.style.textTransform = "uppercase";
+  toast.style.whiteSpace = "nowrap";
+  toast.style.opacity = "0";
+  toast.style.pointerEvents = "none";
+  toast.style.zIndex = "30";
+  toast.style.backdropFilter = "blur(10px)";
+
+  if (!existingToast) {
+    document.body.appendChild(toast);
+  }
+
+  gsap.killTweensOf(toast);
+  gsap.set(toast, { y: 12, opacity: 0 });
+  gsap.timeline()
+    .to(toast, { y: 0, opacity: 1, duration: 0.2, ease: "power2.out" })
+    .to(toast, { opacity: 0, duration: 0.25, delay: 1.3, ease: "power2.in" });
+};
+
 const FooterLinkItem = ({ link }: { link: FooterLink }) => {
   const textRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
   const onPointerOver = () => setHovered(true);
   const onPointerOut = () => setHovered(false);
   const onClick = () => {
+    if (link.unavailableMessage) {
+      showFooterToast(link.unavailableMessage);
+      return;
+    }
+
     if (link.download) {
       const anchor = document.createElement("a");
       anchor.href = link.url;

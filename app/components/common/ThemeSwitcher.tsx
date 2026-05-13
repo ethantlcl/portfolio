@@ -39,7 +39,7 @@ const ThemeSwitcher = () => {
     <div className={`fixed ${positionClass}`} ref={themeSwitcherRef} style={{ opacity: 0, zIndex: 2 }}>
       <div className="flex items-center justify-center gap-2">
         <a className="hover:cursor-pointer" onClick={toggleTheme}>
-          <Image src={withBasePath("icons/night-mode.svg")} width={24} height={24} alt="night mode" loading="eager" />
+          <Image src={withBasePath("/icons/night-mode.svg")} width={24} height={24} alt="night mode" loading="eager" />
         </a>
       </div>
     </div>

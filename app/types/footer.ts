@@ -5,4 +5,5 @@ export interface FooterLink {
   icon: string;
   download?: boolean;
   downloadFileName?: string;
+  unavailableMessage?: string;
 }
