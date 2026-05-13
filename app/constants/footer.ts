@@ -1,4 +1,5 @@
 import { FooterLink } from "../types";
+import { withBasePath } from "./basePath";
 
 export const FOOTER_LINKS: FooterLink[] = [
   {
@@ -29,7 +30,7 @@ export const FOOTER_LINKS: FooterLink[] = [
     name: `Resume`,
     hoverText: `Download`,
     icon: `icons/file.svg`,
-    url: `/resume.pdf`,
+    url: withBasePath(`/resume.pdf`),
     download: true,
     downloadFileName: `Resume - Ethan Tran.pdf`,
   }

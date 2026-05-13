@@ -1,4 +1,5 @@
 import { Project } from "../types";
+import { withBasePath } from "./basePath";
 
 const formatPhotoNumber = (value: number) => (
   Number.isInteger(value) ? String(value) : value.toFixed(1).replace(/\.0$/, "")
@@ -268,7 +269,7 @@ const photographyGalleryFiles = [
 ];
 
 const photographyPreviewGallery = photographyGalleryFiles.map((image, index) => ({
-  src: `/portfolio-photos/${image.file}`,
+  src: withBasePath(`/portfolio-photos/${image.file}`),
   alt: `A New Perspective frame ${index + 1}`,
   focalLength: formatFocalLength(image.focalLength),
   aperture: formatAperture(image.aperture),
@@ -281,7 +282,7 @@ const photographyPreviewGallery = photographyGalleryFiles.map((image, index) => 
 
 const workExperienceGallery = [
   {
-    src: '/portfolio-work-experience/IMG_3301.jpg',
+    src: withBasePath('/portfolio-work-experience/IMG_3301.jpg'),
     alt: 'Operating theatre procedure in progress',
     orientation: 'landscape' as const,
     width: 4032,
@@ -291,21 +292,21 @@ const workExperienceGallery = [
 
 const scubaBlogGallery = [
   {
-    src: '/portfolio-scuba/DSC06739.JPG',
+    src: withBasePath('/portfolio-scuba/DSC06739.JPG'),
     alt: 'Scuba portfolio reef scene',
     orientation: 'landscape' as const,
     width: 6192,
     height: 4128,
   },
   {
-    src: '/portfolio-scuba/P2219767.JPG',
+    src: withBasePath('/portfolio-scuba/P2219767.JPG'),
     alt: 'Scuba portfolio underwater detail',
     orientation: 'landscape' as const,
     width: 4608,
     height: 3456,
   },
   {
-    src: '/portfolio-scuba/stingray.jpg',
+    src: withBasePath('/portfolio-scuba/stingray.jpg'),
     alt: 'Scuba portfolio stingray',
     orientation: 'landscape' as const,
     width: 1920,
@@ -315,7 +316,7 @@ const scubaBlogGallery = [
 
 const yesSirGallery = [
   {
-    src: '/portfolio-yes-sir/IMG_9511.JPG',
+    src: withBasePath('/portfolio-yes-sir/IMG_9511.JPG'),
     alt: 'Cadet kit laid out for inspection',
     orientation: 'landscape' as const,
     width: 4032,
@@ -325,7 +326,7 @@ const yesSirGallery = [
 
 const horizonsGallery = [
   {
-    src: '/portfolio-horizons/london.JPEG',
+    src: withBasePath('/portfolio-horizons/london.JPEG'),
     alt: 'London city scene',
     note: 'London',
     orientation: 'landscape' as const,
@@ -333,7 +334,7 @@ const horizonsGallery = [
     height: 3000,
   },
   {
-    src: '/portfolio-horizons/vietnam2.jpeg',
+    src: withBasePath('/portfolio-horizons/vietnam2.jpeg'),
     alt: 'Vietnam travel scene',
     note: 'Vietnam',
     orientation: 'landscape' as const,
@@ -341,7 +342,7 @@ const horizonsGallery = [
     height: 1980,
   },
   {
-    src: '/portfolio-horizons/rome2.JPG',
+    src: withBasePath('/portfolio-horizons/rome2.JPG'),
     alt: 'Rome street detail',
     note: 'Rome',
     orientation: 'landscape' as const,
@@ -349,7 +350,7 @@ const horizonsGallery = [
     height: 3024,
   },
   {
-    src: '/portfolio-horizons/germany.JPG',
+    src: withBasePath('/portfolio-horizons/germany.JPG'),
     alt: 'Germany travel photograph',
     note: 'Germany',
     orientation: 'landscape' as const,
@@ -357,7 +358,7 @@ const horizonsGallery = [
     height: 3024,
   },
   {
-    src: '/portfolio-horizons/france.JPEG',
+    src: withBasePath('/portfolio-horizons/france.JPEG'),
     alt: 'France city scene',
     note: 'France',
     orientation: 'landscape' as const,
@@ -365,7 +366,7 @@ const horizonsGallery = [
     height: 3000,
   },
   {
-    src: '/portfolio-horizons/vietnam.jpeg',
+    src: withBasePath('/portfolio-horizons/vietnam.jpeg'),
     alt: 'Vietnam street view',
     note: 'Vietnam',
     orientation: 'landscape' as const,
@@ -373,7 +374,7 @@ const horizonsGallery = [
     height: 3024,
   },
   {
-    src: '/portfolio-horizons/japan.JPG',
+    src: withBasePath('/portfolio-horizons/japan.JPG'),
     alt: 'Japan travel image',
     note: 'Japan',
     orientation: 'landscape' as const,
@@ -381,7 +382,7 @@ const horizonsGallery = [
     height: 1622,
   },
   {
-    src: '/portfolio-horizons/venice.JPG',
+    src: withBasePath('/portfolio-horizons/venice.JPG'),
     alt: 'Venice waterfront view',
     note: 'Venice',
     orientation: 'landscape' as const,
@@ -396,7 +397,7 @@ export const PROJECTS: Project[] = [
     date: 'Dec 2025',
     subtext: 'The Gear: Sony a6700',
     details: `Getting my first "real" camera changed how I look at, well, everything. Instead of just seeing a building or a tree, I started obsessing over how light hits a surface and why certain frames feel "right." It's been a lesson in slowing down and actually noticing the world. Plus, it turns out that when you understand shadows and composition, you can make even the most boring objects look like high art. It's my favorite way to stay creative and remind myself that everything looks different if you just change your lens.`,
-    image: '/portfolio-photos/20251224_143100.jpeg',
+    image: withBasePath('/portfolio-photos/20251224_143100.jpeg'),
     imageWidth: 4000,
     imageHeight: 2252,
     gallery: photographyPreviewGallery,
@@ -407,7 +408,7 @@ export const PROJECTS: Project[] = [
     date: 'Jul 2024',
     subtext: 'Clinical shadowing in specialized laparoscopic gastrointestinal surgery, spanning consultations, triage, and long days in theatre.',
     details: `Completed an intensive clinical shadowing program under Mr. Ian Michell (MBBS, FRACS), focusing on specialized laparoscopic gastrointestinal surgery. I gained immersive exposure to the entire patient lifecycle—from initial consultations to the high-stakes environment of the operating theater. This experience was a masterclass in clinical triage and cross-functional teamwork, providing a front-row seat to the 'glamour' of the surgical world: 5:00 AM starts, post-midnight finishes, and the discovery that 'lunch' is often just a theoretical concept. Beyond the technical observations of complex procedures, I developed a deep appreciation for surgical resilience and the art of maintaining peak precision when the coffee has long since worn off.`,
-    image: '/portfolio-work-experience/IMG_3324.jpeg',
+    image: withBasePath('/portfolio-work-experience/IMG_3324.jpeg'),
     imageWidth: 4032,
     imageHeight: 2268,
     gallery: workExperienceGallery,
@@ -418,7 +419,7 @@ export const PROJECTS: Project[] = [
     date: 'Nov 2024',
     subtext: 'The Achievement: AMusA Associate Diploma',
     details: `Ten years, thousands of hours, and a lot of "encouragement" from my mum (who had to drag me away from my iPad more times than I'd like to admit) finally paid off with my AMusA. But more than the diploma, piano taught me that "perfection" is overrated. The real magic happens in the interpretation - the space where there is no right or wrong, just how you feel the music. It's my ultimate grounding force and a reminder that the best things in life usually require a decade of discipline and a lot of patience.`,
-    image: '/portfolio-piano-diplomacy/B2DADDB3-3336-44AB-A005-0AFB0B23B0DF.jpeg',
+    image: withBasePath('/portfolio-piano-diplomacy/B2DADDB3-3336-44AB-A005-0AFB0B23B0DF.jpeg'),
     imageWidth: 3320,
     imageHeight: 2656,
     variant: 'blog',
@@ -438,7 +439,7 @@ export const PROJECTS: Project[] = [
     date: 'Aug 2024',
     subtext: 'The Role: Producer, Lead, and Occasional Firefighter',
     details: `For my VCE media production, I decided that simply starring in a music video wasn't enough of a headache - so I produced it, too. I led a crew of eight, ranging from camera ops to backup dancers, which basically meant I spent my time balancing "creative vision" with the logistical reality of getting eight teenagers to show up at a venue on time. It was a crash course in leadership, choreography, and the art of keeping a team motivated when you're three hours into a shoot and everyone is hungry.`,
-    image: '/portfolio-and-action/1BF5D1B6-220F-4FCF-913B-521A1A137609_1_105_c.jpeg',
+    image: withBasePath('/portfolio-and-action/1BF5D1B6-220F-4FCF-913B-521A1A137609_1_105_c.jpeg'),
     imageWidth: 1024,
     imageHeight: 768,
     variant: 'blog',
@@ -448,7 +449,7 @@ export const PROJECTS: Project[] = [
     date: 'ONGOING',
     subtext: 'Broadening my Horizons',
     details: `I've always been curious about how the world actually functions outside of a textbook or a news feed. For me, traveling isn't about checking off tourist spots; it's about "learning on the ground." I love the logistical puzzle of navigating a completely unfamiliar country - figuring out the local systems, the unwritten social rules, and the way people actually live when the cameras aren't on. It's a crash course in adaptability, realizing that the "right" way to do things changes the moment you cross a border. This first-hand immersion has only made me hungrier to explore more of the world, stay observant, and occasionally get a little lost in the interest of finding a better perspective.`,
-    image: '/portfolio-horizons/vietnam2.jpeg',
+    image: withBasePath('/portfolio-horizons/vietnam2.jpeg'),
     imageNote: 'Vietnam',
     imageWidth: 3520,
     imageHeight: 1980,
@@ -460,7 +461,7 @@ export const PROJECTS: Project[] = [
     date: getNextMonthLabel(),
     subtext: '',
     details: '',
-    image: '/preview.jpg',
+    image: withBasePath('/preview.jpg'),
     imageWidth: 5472,
     imageHeight: 3648,
     variant: 'blog',
@@ -470,7 +471,7 @@ export const PROJECTS: Project[] = [
     date: 'DEC 2025',
     subtext: 'The Rank: Corporal, Australian Army Cadets',
     details: `As a Corporal in the AAC, I learned that leadership is about 20% looking cool in uniform and 80% making sure no one gets lost in the bush. Working in Headquarters meant I was the one juggling multiple radio channels, tracking vehicle routes, and ensuring every cadet was accounted for. It was high-pressure, behind-the-scenes work that taught me how to stay calm when three different people are talking in your ear and the map doesn't match the ground. It's where I learned that a team is only as good as its communication.`,
-    image: '/portfolio-yes-sir/IMG_5611.JPG',
+    image: withBasePath('/portfolio-yes-sir/IMG_5611.JPG'),
     imageWidth: 2594,
     imageHeight: 3458,
     gallery: yesSirGallery,
@@ -481,7 +482,7 @@ export const PROJECTS: Project[] = [
     date: 'Feb 2026',
     subtext: 'The Goal: Not Getting Eaten',
     details: `I've always been terrified of the ocean - the deep, dark, "what-just-touched-my-foot" unknown. So, naturally, I decided to dive right into it. Taking up scuba was about proving to myself that the unknown is always scarier in your head than it is in person. As a huge fan of our planet, seeing the hidden world beneath the waves firsthand was life-changing. It turns out the ocean isn't just a dark abyss; it's a beautiful, fragile ecosystem that's worth protecting - even if it still makes me a little nervous.`,
-    image: '/portfolio-scuba/thumbnail.png',
+    image: withBasePath('/portfolio-scuba/thumbnail.png'),
     imageWidth: 1280,
     imageHeight: 720,
     gallery: scubaBlogGallery,
@@ -492,7 +493,7 @@ export const PROJECTS: Project[] = [
     date: 'Apr 2026',
     subtext: "The Idea: The 'Did I Close the Garage?' Solver",
     details: `Entering the MEC competition was my first real taste of the startup world, where there are no textbooks and definitely no answer keys. My team and I tackled a very specific brand of modern anxiety: the "I'm ten minutes away from home and I can't remember if I closed the garage door" feeling. We built a way for users to remotely monitor and control their garage, learning through a lot of trial, error, and mentor feedback. It was a wild introduction to entrepreneurship and the realization that the best products solve the problems that keep you up at night.`,
-    image: '/portfolio-mec-startup-competition/mec-airwallex-ssc-final.jpg',
+    image: withBasePath('/portfolio-mec-startup-competition/mec-airwallex-ssc-final.jpg'),
     imageWidth: 1920,
     imageHeight: 1080,
     variant: 'blog',
@@ -500,7 +501,7 @@ export const PROJECTS: Project[] = [
 ];
 
 export const PROJECT_PRELOAD_ASSET_URLS = [
-  '/portfolio-photos/20251224_143100.jpeg',
+  withBasePath('/portfolio-photos/20251224_143100.jpeg'),
   ...photographyPreviewGallery.map((image) => image.src),
   ...PROJECTS.flatMap((project) => {
     const assets: string[] = [];

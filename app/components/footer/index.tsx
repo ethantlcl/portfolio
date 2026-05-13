@@ -7,21 +7,15 @@ import * as THREE from "three";
 import { FOOTER_LINKS } from "../../constants";
 import { FooterLink } from "../../types";
 
-const basePath = process.env.nextPublicBasePath ?? "";
-
 const FooterLinkItem = ({ link }: { link: FooterLink }) => {
   const textRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
   const onPointerOver = () => setHovered(true);
   const onPointerOut = () => setHovered(false);
   const onClick = () => {
-    const resolvedUrl = link.url.startsWith("/")
-      ? `${basePath}${link.url}`
-      : link.url;
-
     if (link.download) {
       const anchor = document.createElement("a");
-      anchor.href = resolvedUrl;
+      anchor.href = link.url;
       anchor.download = link.downloadFileName ?? "";
       document.body.appendChild(anchor);
       anchor.click();
@@ -29,7 +23,7 @@ const FooterLinkItem = ({ link }: { link: FooterLink }) => {
       return;
     }
 
-    window.open(resolvedUrl, '_blank');
+    window.open(link.url, '_blank');
   };
   const onPointerMove = (e: MouseEvent) => {
     if (isMobile) return;
