@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 
 import { usePortalStore, useScrollStore } from "@stores";
 
+const basePath = process.env.nextPublicBasePath ?? "";
+
+const withBasePath = (src: string) => (
+  src.startsWith("/") ? `${basePath}${src}` : `${basePath}/${src}`
+);
+
 export const ScrollHint = () => {
   const [hintText, setHintText] = useState('');
   const [showScrollHint, setShowScrollHint] = useState(false);
@@ -52,7 +58,7 @@ export const ScrollHint = () => {
     <div className="fixed w-full bottom-5 scroll-hint" style={{ opacity: 0 }}>
       <div className="flex items-center justify-center animate-pulse">
         { showScrollHint }
-        <Image src={svgSrc} width={18} height={18} alt="night mode" loading="lazy" />
+        <Image src={withBasePath(svgSrc)} width={18} height={18} alt="night mode" loading="lazy" />
         <span className="text-white">{hintText}</span>
       </div>
     </div>

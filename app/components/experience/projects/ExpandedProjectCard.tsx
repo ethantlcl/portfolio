@@ -4,6 +4,12 @@ import { type ReactNode, useEffect, useMemo, useRef } from "react";
 
 import { Project, ProjectImage } from "@types";
 
+const basePath = process.env.nextPublicBasePath ?? "";
+
+const withBasePath = (src: string) => (
+  src.startsWith("/") ? `${basePath}${src}` : src
+);
+
 interface ExpandedProjectCardProps {
   project: Project;
   onClose: () => void;
@@ -39,7 +45,7 @@ const ProjectImageAsset = ({
     preload={preload}
     quality={90}
     sizes={sizes}
-    src={src}
+    src={withBasePath(src)}
     width={width}
   />
 );
